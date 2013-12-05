@@ -22,8 +22,9 @@ GameScene::GameScene()
 
 GameScene::~GameScene()
 {
-	delete m_input;
-	delete m_blockLayer;
+	// donâ€˜t delete object duplicately
+	//delete m_input;
+	//delete m_blockLayer;
 }
 
 CCScene* GameScene::scene()
@@ -47,7 +48,7 @@ bool GameScene::init()
 	m_backgroundLayer = BackgroundLayer::create();
 	this->addChild(m_backgroundLayer, 100);
 
-	//Ô¤¼ÓÔØÉùÒô.
+	//comment is meessy code?
 	{
 		SimpleAudioEngine::sharedEngine()->preloadEffect("sounds/die.wav");
 		SimpleAudioEngine::sharedEngine()->preloadEffect("sounds/flip_on.wav");
